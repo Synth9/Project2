@@ -1,8 +1,8 @@
-# Project X README
+# Project 2 README
 
-Student 1: Partner1 Name (123456789)
+Student 1: Sean Ganbold (925381927)
 
-Student 2: Partner2 Name (123456987)
+Student 2: N/A
 
 ## Project Status
 This the current status of the project ...
