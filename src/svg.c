@@ -6,6 +6,7 @@
  */
 #include "svg.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 
 /**
@@ -29,6 +30,9 @@ svg_context_ptr svg_create(svg_write_fn write_fn,
     context->write_fn = write_fn;
     context->cleanup_fn = cleanup_fn;
     context->user = user;
+    char Buffer[1024];
+    snprintf(Buffer,sizeof(Buffer),"<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg width=\"%d\" height=\"%d\" xmlns=\"http://www.w3.org/2000/svg\">",width, height);
+    write_fn(user,Buffer);
 
 
     return context;
@@ -37,6 +41,7 @@ svg_context_ptr svg_create(svg_write_fn write_fn,
 svg_return_t svg_destroy(svg_context_ptr context){
     // Enter code here
     if(context){
+        context->write_fn(context->user,"</svg>");
         free(context);
         return SVG_OK;
     }
