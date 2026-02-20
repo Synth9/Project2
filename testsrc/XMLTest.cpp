@@ -4,7 +4,6 @@
 
 TEST(XMLReaderTest, SimpleTest){
     
-    
 }
 
 TEST(XMLReaderTest, ElementTest){
